@@ -16,7 +16,7 @@ public class CSV
 			
 			ArrayList<String[]> data = new ArrayList<String[]>();
 			
-			data.add(new String[] {"y=x^3+x^2"});
+			data.add(new String[] {"y=x^3+x^2", "x", "y"});
 			
 			for(double i = start; i <= end; i += incriment)
 			{
@@ -24,7 +24,7 @@ public class CSV
 				Double answer = Math.pow(i, 3) + Math.pow(i, 2);
 				String y = answer.toString();
 				String x = variable.toString();
-				data.add(new String[] {x, y});
+				data.add(new String[] {null, x, y});
 			}
 			
 			writer.writeAll(data);
