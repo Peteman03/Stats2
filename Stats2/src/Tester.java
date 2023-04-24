@@ -1,10 +1,15 @@
+import java.io.IOException;
 import java.util.Scanner;
 
-public class Tester {
+//tester method for the CSV writer salter and smoother
+public class Tester 
+{
 
 	public static void main(String[] args) 
 	{
-		CSV test = new CSV();
+		CSV testCSV = new CSV();
+		CSVSalter testSalt = new CSVSalter();
+		CSVSmoother testSmooth = new CSVSmoother();
 		Scanner reader = new Scanner(System.in);
 		
 		System.out.println("Where do you want the graph to start: ");
@@ -12,10 +17,14 @@ public class Tester {
 		System.out.println("Where do you want the graph to end: ");
 		int end = reader.nextInt();
 		System.out.println("What should the incriment of the graph be: ");
-		double incriment = reader.nextDouble();
+		int incriment = reader.nextInt();
 		
-		test.writetoFile(start, end, incriment);
-
+		testCSV.writetoFile(start, end, incriment);
+		
+		testSalt.Salter();
+		
+		testSmooth.Smooth();
+	
 	}
 
 }
