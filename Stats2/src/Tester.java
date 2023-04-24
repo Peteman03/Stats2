@@ -7,7 +7,7 @@ public class Tester
 
 	public static void main(String[] args) 
 	{
-		CSV testCSV = new CSV();
+		Plotter testCSV = new Plotter();
 		CSVSalter testSalt = new CSVSalter();
 		CSVSmoother testSmooth = new CSVSmoother();
 		Scanner reader = new Scanner(System.in);

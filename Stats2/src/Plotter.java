@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 import com.opencsv.CSVWriter;
 
-public class CSV 
+public class Plotter 
 {
 	/**
 	 * The method the write data to a file using the OpenCSV library and its CSVWriter method
