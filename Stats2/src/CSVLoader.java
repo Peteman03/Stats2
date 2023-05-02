@@ -5,16 +5,18 @@ import java.io.*;
 //I just altered the code to work for this project
 public class CSVLoader 
 {
-
-	public static void main(String[] args) 
+	private ArrayList<String> x;
+	private ArrayList<String> y;
+	private ArrayList<String> header;
+	public CSVLoader(String file) 
 	{
 		//create three arraylist of type string to hold the data, one for the x value, one for the y value, and 1 for the header
-		ArrayList<String> x = new ArrayList<>();
-		ArrayList<String> y = new ArrayList<>();
-		ArrayList<String> header = new ArrayList<>();
+		x = new ArrayList<>();
+		y = new ArrayList<>();
+		header = new ArrayList<>();
 		
 		//create a file with the filename function.csv
-		File file = new File("function.csv");
+		File read = new File(file);
 		
 		//create a scanner object
 		Scanner in = null;
@@ -23,7 +25,7 @@ public class CSVLoader
 		try 
 		{
 			//create a new scanner that pulls data from the file
-			in = new Scanner(file);
+			in = new Scanner(read);
 			
 			//try block to make sure the file is readable
 			try
@@ -77,12 +79,16 @@ public class CSVLoader
 			//Print statement for the error
 			System.err.println("File Unavailable: " + e.getMessage());
 		}
-		
-		//Print statements to print out all of the arrays with spaces between
-		System.out.print(header + "\n");
-		System.out.println();
-		System.out.print(x + "\n");
-		System.out.println();
-		System.out.print(y);
 	}
+	
+	public ArrayList<String> getX()
+	{
+		return x;
+	}
+	
+	public ArrayList<String> getY()
+	{
+		return y;
+	}
+	
 }
