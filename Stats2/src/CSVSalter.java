@@ -69,7 +69,7 @@ public class CSVSalter
 		for(int i = 1; i < y.size(); i++)
 		{
 			//change variable to determine how much the data point is going to shift
-			int change = generator.nextInt(20)+1;
+			int change = generator.nextInt(500)+1000;
 			//sign variable to determine whether that change is going to be positive or negative
 			int sign = generator.nextInt(2);
 			//set value equal to the y value by removing the double quotation marks and parsing the value to the wrapper class Integer
