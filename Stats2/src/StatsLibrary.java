@@ -294,4 +294,42 @@ public class StatsLibrary
 	{
 		return Math.pow(1-p, y);
 	}
+	
+	/**
+	 * Method to determine the hypergeometric distribution of an event given N, n, r, and y
+	 * @param N set of elements
+	 * @param n sample of elements
+	 * @param r element of interest
+	 * @param y variable of interest
+	 * @return the hypergeomtric distribution as a double
+	 */
+	public double hypergeometricDistribution(int N, int n, int r, int y)
+	{
+		//get part of the numerator by doing a combination between r and y
+		BigInteger combo1 = combination(r,y);
+		//get the other part of the numerator by doing a combination between N-r and n-y
+		BigInteger combo2 = combination(N-r,n-y);
+		//get the denominator by doing the combination of N and n
+		BigInteger combo3 = combination(N,n);
+		
+		//set the values equal to a double and multiply the parts of the numerator together and divide by the denominator
+		return (combo1.doubleValue()*combo2.doubleValue())/(combo3.doubleValue());
+	}
+	
+	/**
+	 * Determine the poisson distribution for an event given y and h as lambda
+	 * @param y the variable of interest
+	 * @param h is lambda or the rate
+	 * @return the poisson distribution as a double
+	 */
+	public double poissonDistribution(int y, double h)
+	{
+		//get the denominator by doing the factorial of y
+		BigInteger denominator = factorial(y);
+		//get the numerator by multiplying lambda to the y power and e to the negative lambda power
+		double numerator = Math.pow(h, y) * Math.pow(Math.E, -h);
+		
+		//set the value of a denominator to a double and divide the numerator by it
+		return numerator/denominator.doubleValue();
+	}
 }
